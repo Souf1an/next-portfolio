@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Header from "@/components/Header"
 
-export default function Home() {
+export default function Home({children}) {
   return (
     <>
-      <Header />
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}
+      </body>
     </>
   );
 }
