@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header"
+import Background from "@/components/Background";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Soufiane AIT ALI",
-  description: "Self-thaut frontend developer based in Agadir, Morocco.",
+  description: "Self-taught frontend developer based in Agadir, Morocco.",
 };
 
 export default function RootLayout({ children }) {
@@ -23,9 +24,12 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <Background />
         <Header />
-        {children}
+        <main className="relative z-10">
+          {children}
+        </main>
       </body>
     </html>
   );

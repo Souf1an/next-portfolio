@@ -54,7 +54,7 @@ function ContactSection() {
           placeholder="Name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-4 rounded-lg focus:outline-none focus:border-[#c9a84c]"
+          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-4 rounded-lg focus:outline-none focus:border-[#ffffff]"
         />
 
         <input
@@ -63,7 +63,7 @@ function ContactSection() {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-4 rounded-lg focus:outline-none focus:border-[#c9a84c]"
+          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-4 rounded-lg focus:outline-none focus:border-[#ffffff]"
         />
 
         {/* <input
@@ -72,7 +72,7 @@ function ContactSection() {
           placeholder="Phone"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-4 rounded-lg focus:outline-none focus:border-[#c9a84c]"
+          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-4 rounded-lg focus:outline-none focus:border-[#ffffff]"
         /> */}
 
         <textarea
@@ -81,7 +81,7 @@ function ContactSection() {
           value={formData.message}
           onChange={handleChange}
           rows={5}
-          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-6 rounded-lg focus:outline-none focus:border-[#c9a84c]"
+          className="w-full bg-transparent border border-[#333] text-white placeholder-[#888] px-4 py-3 mb-6 rounded-lg focus:outline-none focus:border-[#ffffff]"
         />
 
         {status === "validation" && (
@@ -103,7 +103,7 @@ function ContactSection() {
         <button
           onClick={handleSubmit}
           className="w-full py-3 rounded-lg font-medium text-black transition-all duration-300 hover:opacity-90"
-          style={{ background: "#c9a84c" }}>
+          style={{ background: "#ffffff" }}>
           Send Message
         </button>
       </div>

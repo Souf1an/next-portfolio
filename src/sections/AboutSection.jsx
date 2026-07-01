@@ -20,7 +20,7 @@ function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="flex-1">
-          <p className="text-[#c9a84c] uppercase tracking-widest text-sm mb-2">Know Me More</p>
+          <p className="text-[#ffffff] uppercase tracking-widest text-sm mb-2">Know Me More</p>
           <h2 className="text-4xl font-bold text-white mb-4">{"I'm Soufiane AITALI, a Web Developer"}</h2>
           <p className="text-[#888888] mb-8 leading-relaxed">
             {"Self-taught web developer with a passion for building modern, responsive web experiences.Without a traditional degree, I've proven that dedication and hands-on learning speak louder than credentials."}
@@ -49,7 +49,7 @@ function AboutSection() {
           <a href="/cv.pdf"
             download
             className="px-8 py-3 rounded-lg font-medium text-black transition-all duration-300 hover:opacity-90"
-            style={{ background: "#c9a84c" }}>
+            style={{ background: "#ffffff" }}>
             Download CV
           </a>
         </motion.div>
@@ -65,7 +65,7 @@ function AboutSection() {
             alt="Soufiane AITALI"
             width={256}
             height={256}
-            className="rounded-full object-cover border-4 border-[#c9a84c]"
+            className="rounded-full object-cover border-4 border-[#ffffff]"
           />
         </motion.div>
 

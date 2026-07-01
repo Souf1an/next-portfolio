@@ -7,23 +7,23 @@ import ContactSection from "@/sections/ContactSection"
 export default function Home() {
   return (
     <main className="pt-20">
-      <section id="hero" className="h-screen" style={{ background: "#0f0f0f" }}>
+      <section id="hero" className="h-screen">
         <HeroSection />
       </section>
 
-      <section id="about" className="h-screen" style={{ background: "#141414" }}>
+      <section id="about" className="h-screen">
         <AboutSection />
       </section>
 
-      <section id="skills" className="h-screen" style={{ background: "#0f0f0f" }}>
+      <section id="skills" className="h-screen">
         <SkillsSection />
       </section>
 
-      <section id="projects" className="h-screen" style={{ background: "#141414" }}>
+      <section id="projects" className="h-screen">
         {/* <ProjectsSection /> */}
       </section>
 
-      <section id="contact" className="h-screen" style={{ background: "#0f0f0f" }}>
+      <section id="contact" className="h-screen">
         <ContactSection />
       </section>
     </main>

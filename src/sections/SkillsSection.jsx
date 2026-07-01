@@ -33,7 +33,7 @@ function SkillsSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-[#c9a84c] uppercase tracking-widest text-sm mb-2">
+        className="text-[#ffffff] uppercase tracking-widest text-sm mb-2">
         What I Know
       </motion.p>
 
@@ -61,7 +61,7 @@ function SkillsSection() {
               <div key={skill.name}>
                 <div className="flex justify-between mb-2">
                   <span className="text-white font-medium">{skill.name}</span>
-                  <span className="text-[#c9a84c]">{skill.level}%</span>
+                  <span className="text-[#ffffff]">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-[#1a1a1a] rounded-full h-2">
                   <motion.div
@@ -69,7 +69,7 @@ function SkillsSection() {
                     whileInView={{ width: `${skill.level}%` }}
                     transition={{ duration: 0.8 }}
                     className="h-2 rounded-full"
-                    style={{ background: "#c9a84c" }}
+                    style={{ background: "#ffffff" }}
                   />
                 </div>
               </div>
@@ -85,7 +85,7 @@ function SkillsSection() {
               <div key={lang.name}>
                 <div className="flex justify-between mb-2">
                   <span className="text-white font-medium">{lang.name}</span>
-                  <span className="text-[#c9a84c]">{lang.level}%</span>
+                  <span className="text-[#ffffff]">{lang.level}%</span>
                 </div>
                 <div className="w-full bg-[#1a1a1a] rounded-full h-2">
                   <motion.div
@@ -93,7 +93,7 @@ function SkillsSection() {
                     whileInView={{ width: `${lang.level}%` }}
                     transition={{ duration: 0.8 }}
                     className="h-2 rounded-full"
-                    style={{ background: "#c9a84c" }}
+                    style={{ background: "#ffffff" }}
                   />
                 </div>
               </div>
@@ -107,12 +107,12 @@ function SkillsSection() {
       <div className="flex gap-4 mb-6">
         <button
           onClick={() => swiperRef.current.swiper.slidePrev()}
-          className="w-10 h-10 rounded-full border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-black transition-all duration-300">
+          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-black transition-all duration-300">
           ←
         </button>
         <button
           onClick={() => swiperRef.current.swiper.slideNext()}
-          className="w-10 h-10 rounded-full border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-black transition-all duration-300">
+          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-black transition-all duration-300">
           →
         </button>
       </div>

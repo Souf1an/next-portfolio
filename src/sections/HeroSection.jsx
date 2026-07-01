@@ -49,7 +49,7 @@ function HeroSection() {
       transition={{ duration: 0.5, delay: 1 }}
       href="#contact"
       className="px-8 py-3 rounded-lg font-medium text-black transition-all duration-300 hover:opacity-90"
-      style={{background: "#c9a84c"}}>
+      style={{background: "#ffffff"}}>
       Hire Me
     </motion.a>
 
