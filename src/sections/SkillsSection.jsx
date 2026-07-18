@@ -22,6 +22,7 @@ const languages = [
   { name: "Arabic", level: 100 },
   { name: "French", level: 80 },
   { name: "English", level: 70 },
+  { name: "Amazigh", level: 100 },
 ]
 
 
@@ -107,12 +108,12 @@ function SkillsSection() {
       <div className="flex gap-4 mb-6">
         <button
           onClick={() => swiperRef.current.swiper.slidePrev()}
-          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-black transition-all duration-300">
+          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-black transition-all duration-300">
           ←
         </button>
         <button
           onClick={() => swiperRef.current.swiper.slideNext()}
-          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-black transition-all duration-300">
+          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-black transition-all duration-300">
           →
         </button>
       </div>
