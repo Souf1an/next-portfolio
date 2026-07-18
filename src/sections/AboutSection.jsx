@@ -65,7 +65,7 @@ function AboutSection() {
             alt="Soufiane AITALI"
             width={256}
             height={256}
-            className="rounded-full object-cover border-4 border-[#ffffff]"
+            className="rounded-full object-cover border border-[#ffffff71]"
           />
         </motion.div>
 

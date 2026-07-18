@@ -1,6 +1,8 @@
 "use client"
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import MetallicPaint from '@/components/ui/MetallicPaint';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,9 +29,17 @@ function Header() {
     <header className="fixed top-0 left-0 w-full z-50 px-8 py-4 flex items-center justify-between backdrop-blur-md border-[#]/20">
 
       {/* Logo */}
-      <div className="flex flex-col">
-        <a href="#hero" className="text-white font-bold text-lg">SOUFIANE AITALI</a>
-        <p className="text-[#ffffff] text-xs tracking-widest uppercase">Frontend Developer</p>
+      <div className="flex items-center gap-3">
+        <div className="relative w-14 h-14 shrink-0">
+          <MetallicPaint imageSrc="/logo.svg" />
+        </div>
+
+        <a
+          href="#hero"
+          className="text-lg font-semibold tracking-wide text-white"
+        >
+          SOUFIANE AITALI
+        </a>
       </div>
 
       {/* Desktop nav */}

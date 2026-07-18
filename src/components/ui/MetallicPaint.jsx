@@ -1,5 +1,6 @@
-'use client';;
-import { useEffect, useRef, useState, useCallback } from 'react';
+'use client';
+
+import { useEffect, useRef, useState, useCallback, useLayoutEffect } from 'react';
 
 const vertexShader = `#version 300 es
 precision highp float;
@@ -305,7 +306,6 @@ export default function MetallicPaint({
 
     const compile = (src, type) => {
       const s = gl.createShader(type);
-      if (!s) return null;
       gl.shaderSource(s, src);
       gl.compileShader(s);
       if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
@@ -320,7 +320,6 @@ export default function MetallicPaint({
     if (!vs || !fs) return false;
 
     const prog = gl.createProgram();
-    if (!prog) return false;
     gl.attachShader(prog, vs);
     gl.attachShader(prog, fs);
     gl.linkProgram(prog);
@@ -353,7 +352,7 @@ export default function MetallicPaint({
     return true;
   }, []);
 
-  const uploadTexture = useCallback((imgData) => {
+  const uploadTexture = useCallback(imgData => {
     const gl = glRef.current;
     const uniforms = uniformsRef.current;
     if (!gl || !imgData) return;
@@ -367,17 +366,7 @@ export default function MetallicPaint({
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    gl.texImage2D(
-      gl.TEXTURE_2D,
-      0,
-      gl.RGBA,
-      imgData.width,
-      imgData.height,
-      0,
-      gl.RGBA,
-      gl.UNSIGNED_BYTE,
-      imgData.data
-    );
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, imgData.width, imgData.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, imgData.data);
     gl.uniform1i(uniforms.u_tex, 0);
 
     const ratio = imgData.width / imgData.height;
@@ -388,22 +377,21 @@ export default function MetallicPaint({
     imgDataRef.current = imgData;
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!initGL()) return;
 
     const canvas = canvasRef.current;
     const gl = glRef.current;
-    if (!canvas || !gl) return;
-
     const side = 1000 * devicePixelRatio;
     canvas.width = side;
     canvas.height = side;
     gl.viewport(0, 0, side, side);
 
-    setReady(true);
+    const readyFrame = requestAnimationFrame(() => setReady(true));
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      cancelAnimationFrame(readyFrame);
       if (textureRef.current && glRef.current) {
         glRef.current.deleteTexture(textureRef.current);
       }
@@ -413,7 +401,7 @@ export default function MetallicPaint({
   useEffect(() => {
     if (!ready || !imageSrc) return;
 
-    setTextureReady(false);
+    const frame = requestAnimationFrame(() => setTextureReady(false));
     const img = new Image();
     img.crossOrigin = 'anonymous';
     img.onload = () => {
@@ -422,6 +410,8 @@ export default function MetallicPaint({
       setTextureReady(true);
     };
     img.src = imageSrc;
+
+    return () => cancelAnimationFrame(frame);
   }, [ready, imageSrc, uploadTexture]);
 
   useEffect(() => {
@@ -480,9 +470,8 @@ export default function MetallicPaint({
     const u = uniformsRef.current;
     const canvas = canvasRef.current;
     const mouse = mouseRef.current;
-    if (!gl || !canvas) return;
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = e => {
       const rect = canvas.getBoundingClientRect();
       mouse.targetX = (e.clientX - rect.left) / rect.width;
       mouse.targetY = (e.clientY - rect.top) / rect.height;
@@ -490,7 +479,7 @@ export default function MetallicPaint({
 
     canvas.addEventListener('mousemove', handleMouseMove);
 
-    const render = (time) => {
+    const render = time => {
       const delta = time - lastTimeRef.current;
       lastTimeRef.current = time;
 
