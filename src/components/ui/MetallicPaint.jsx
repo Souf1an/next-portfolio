@@ -382,7 +382,8 @@ export default function MetallicPaint({
 
     const canvas = canvasRef.current;
     const gl = glRef.current;
-    const side = 1000 * devicePixelRatio;
+    const DPR = Math.min(window.devicePixelRatio, 1);
+    const side = 512 * DPR;
     canvas.width = side;
     canvas.height = side;
     gl.viewport(0, 0, side, side);

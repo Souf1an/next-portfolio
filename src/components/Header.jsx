@@ -30,9 +30,9 @@ function Header() {
 
       {/* Logo */}
       <div className="flex items-center gap-3">
-        {/* <div className="relative w-14 h-14 shrink-0">
+        <div className="relative w-14 h-14 shrink-0">
           <MetallicPaint imageSrc="/logo.svg" />
-        </div> */}
+        </div>
 
         <a
           href="#hero"
