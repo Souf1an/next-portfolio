@@ -505,6 +505,5 @@ export default function MetallicPaint({
       canvas.removeEventListener('mousemove', handleMouseMove);
     };
   }, [ready, textureReady]);
-
   return <canvas ref={canvasRef} className="block h-full w-full object-contain" />;
 }

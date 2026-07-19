@@ -25,6 +25,14 @@ function Header() {
     return () => observer.disconnect()
   }, [])
 
+  const navItems = [
+    { id: "hero", label: "Hero" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-8 py-4 flex items-center justify-between backdrop-blur-md border-[#]/20">
 
@@ -44,31 +52,19 @@ function Header() {
 
       {/* Desktop nav */}
       <nav className="hidden md:flex gap-8">
-        <a
-          href="#hero"
-          className={`transition-colors duration-300 ${activeSection === "hero" ? "text-[#ffffff]" : "text-[#888888] hover:text-[#ffffff]"}`}>
-          Hero
-        </a>
-        <a
-          href="#about"
-          className={`transition-colors duration-300 ${activeSection === "about" ? "text-[#ffffff]" : "text-[#888888] hover:text-[#ffffff]"}`}>
-          About
-        </a>
-        <a
-          href="#skills"
-          className={`transition-colors duration-300 ${activeSection === "skills" ? "text-[#ffffff]" : "text-[#888888] hover:text-[#ffffff]"}`}>
-          Skills
-        </a>
-        <a
-          href="#projects"
-          className={`transition-colors duration-300 ${activeSection === "projects" ? "text-[#ffffff]" : "text-[#888888] hover:text-[#ffffff]"}`}>
-          Projects
-        </a>
-        <a
-          href="#contact"
-          className={`transition-colors duration-300 ${activeSection === "contact" ? "text-[#ffffff]" : "text-[#888888] hover:text-[#ffffff]"}`}>
-          Contact
-        </a>
+        {navItems.map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            onClick={() => setIsOpen(false)}
+            className={`transition-colors duration-300 ${activeSection === item.id
+                ? "text-white"
+                : "text-[#888888] hover:text-white"
+              }`}
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
 
       {/* Hamburger */}
@@ -80,12 +76,20 @@ function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full flex flex-col gap-4 px-8 py-6 md:hidden backdrop-blur-md bg-[#1a1a1a]/80 border-b border-[#ffffff]/20">
-          <a href="#hero" onClick={() => setIsOpen(false)} className="text-[#888888] hover:text-[#ffffff] transition-colors duration-300">Hero</a>
-          <a href="#about" onClick={() => setIsOpen(false)} className="text-[#888888] hover:text-[#ffffff] transition-colors duration-300">About</a>
-          <a href="#skills" onClick={() => setIsOpen(false)} className="text-[#888888] hover:text-[#ffffff] transition-colors duration-300">Skills</a>
-          <a href="#projects" onClick={() => setIsOpen(false)} className="text-[#888888] hover:text-[#ffffff] transition-colors duration-300">Projects</a>
-          <a href="#contact" onClick={() => setIsOpen(false)} className="text-[#888888] hover:text-[#ffffff] transition-colors duration-300">Contact</a>
+        <div className="absolute top-full left-0 w-full flex flex-col gap-4 px-8 py-6 md:hidden backdrop-blur-md bg-[#1a1a1a]/90 border-b border-[#ffffff]/20">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={() => setIsOpen(false)}
+              className={`transition-colors duration-300 ${activeSection === item.id
+                ? "text-white"
+                : "text-[#888888] hover:text-white"
+                }`}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       )}
 

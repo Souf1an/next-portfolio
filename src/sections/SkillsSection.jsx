@@ -34,7 +34,7 @@ function SkillsSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-[#ffffff] uppercase tracking-widest text-sm mb-2">
+        className="text-[#ffffff] uppercase tracking-widest text-sm mb-2 font-mono">
         What I Know
       </motion.p>
 
@@ -57,7 +57,7 @@ function SkillsSection() {
         {/* Slide 1 - Tech Skills */}
         <SwiperSlide>
           <p className="text-[#888888] text-sm uppercase tracking-widest mb-6">Tech Skills</p>
-          <div className="flex flex-col gap-6 pb-12">
+          <div className="flex flex-col gap-6 pb-12 font-mono">
             {skills.map((skill) => (
               <div key={skill.name}>
                 <div className="flex justify-between mb-2">
@@ -81,7 +81,7 @@ function SkillsSection() {
         {/* Slide 2 - Languages */}
         <SwiperSlide>
           <p className="text-[#888888] text-sm uppercase tracking-widest mb-6">Languages</p>
-          <div className="flex flex-col gap-6 pb-12">
+          <div className="flex flex-col gap-6 pb-12 font-mono">
             {languages.map((lang) => (
               <div key={lang.name}>
                 <div className="flex justify-between mb-2">
@@ -108,12 +108,12 @@ function SkillsSection() {
       <div className="flex gap-4 mb-6">
         <button
           onClick={() => swiperRef.current.swiper.slidePrev()}
-          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-black transition-all duration-300">
+          className="font-mono w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-black transition-all duration-300">
           ←
         </button>
         <button
           onClick={() => swiperRef.current.swiper.slideNext()}
-          className="w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-black transition-all duration-300">
+          className="font-mono w-10 h-10 rounded-full border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-black transition-all duration-300">
           →
         </button>
       </div>

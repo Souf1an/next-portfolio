@@ -18,6 +18,8 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        premium:
+          "rounded-full bg-white text-black hover:bg-zinc-200 transition-all duration-300"
       },
       size: {
         default:
@@ -44,13 +46,16 @@ function Button({
   className,
   variant = "default",
   size = "default",
+  render,
   ...props
 }) {
   return (
     <ButtonPrimitive
+      render={render}
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
-      {...props} />
+      {...props}
+    />
   );
 }
 

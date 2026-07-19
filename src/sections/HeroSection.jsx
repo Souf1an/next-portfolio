@@ -12,8 +12,8 @@ function HeroSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-[#888888] text-sm md:text-lg mb-4 tracking-widest uppercase">
-      Welcome
+      className="text-[#888888] text-sm md:text-lg mb-4 tracking-widest uppercase font-mono">
+      houdy !
     </motion.p>
 
     <motion.h1
@@ -27,7 +27,13 @@ function HeroSection() {
           2000,
           "I'm a Frontend Developer",
           2000,
+          "I'm a Backend Developer",
+          2000,
           "I'm a Freelancer",
+          2000,
+          "I build modern websites",
+          2000,
+          "I create responsive designs",
           2000,
         ]}
         speed={50}
@@ -39,7 +45,7 @@ function HeroSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.6 }}
-      className="text-[#888888] max-w-md mb-10">
+      className="text-[#888888] max-w-md mb-10 font-sans">
       I build modern, responsive websites that make people stop scrolling.
     </motion.p>
 
@@ -48,7 +54,7 @@ function HeroSection() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1 }}
       href="#contact"
-      className="px-8 py-3 rounded-lg font-medium text-black transition-all duration-300 hover:opacity-90"
+      className="px-8 py-3 rounded-lg font-bold font-mono text-black transition-all duration-300 hover:opacity-90"
       style={{background: "#ffffff"}}>
       Hire Me
     </motion.a>
@@ -56,5 +62,4 @@ function HeroSection() {
   </div>
 )
 }
-
 export default HeroSection

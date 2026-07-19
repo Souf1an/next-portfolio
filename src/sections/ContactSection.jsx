@@ -85,25 +85,25 @@ function ContactSection() {
         />
 
         {status === "validation" && (
-          <p className="text-yellow-500 mb-4">Please fill in all fields! ⚠️</p>
+          <p className="text-yellow-500 mb-4 font-mono">Please fill in all fields! ⚠️</p>
         )}
 
         {status === "success" && (
-          <p className="text-green-500 mb-4">Message sent successfully! ✓</p>
+          <p className="text-green-500 mb-4 font-mono">Message sent successfully! ✓</p>
         )}
 
         {status === "error" && (
-          <p className="text-red-500 mb-4">Something went wrong, please try again.</p>
+          <p className="text-red-500 mb-4 font-mono">Something went wrong, please try again.</p>
         )}
 
         {status === "invalidEmail" && (
-          <p className="text-yellow-500 mb-4">Please enter a valid email address! ⚠️</p>
+          <p className="text-yellow-500 mb-4 font-mono">Please enter a valid email address! ⚠️</p>
         )}
 
         <button
           onClick={handleSubmit}
-          className="w-full py-3 rounded-lg font-medium text-black transition-all duration-300 hover:opacity-90"
-          style={{ background: "#ffffff" }}>
+          className="w-full py-3 rounded-lg font-bold font-mono text-black transition-all duration-300 hover:opacity-90"
+          style={{ background: "#ffffff"}}>
           Send Message
         </button>
       </div>
