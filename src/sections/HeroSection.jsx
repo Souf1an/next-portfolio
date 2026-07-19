@@ -27,8 +27,6 @@ function HeroSection() {
           2000,
           "I'm a Frontend Developer",
           2000,
-          "I'm a Backend Developer",
-          2000,
           "I'm a Freelancer",
           2000,
           "I build modern websites",
