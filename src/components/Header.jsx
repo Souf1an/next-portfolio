@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import MetallicPaint from '@/components/ui/MetallicPaint';
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -51,21 +52,41 @@ function Header() {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:flex gap-8">
+      <nav className="hidden md:flex gap-12">
         {navItems.map((item) => (
           <a
             key={item.id}
             href={`#${item.id}`}
             onClick={() => setIsOpen(false)}
-            className={`transition-colors duration-300 ${activeSection === item.id
-                ? "text-white"
-                : "text-[#888888] hover:text-white"
+            className={`text-xl transition-colors duration-300 ${activeSection === item.id
+              ? "text-white"
+              : "text-[#888888] hover:text-white"
               }`}
           >
             {item.label}
           </a>
         ))}
       </nav>
+
+      {/* Social links */}
+      <div className="hidden md:flex gap-4">
+        <a
+          href="https://github.com/Souf1an"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#888888] hover:text-white transition-colors duration-300"
+        >
+          < FaGithub size={20} />
+        </a>
+        <a
+          href="https://linkedin.com/in/soufiane-ait-ali"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#888888] hover:text-white transition-colors duration-300"
+        >
+          < FaLinkedin size={20} />
+        </a>
+      </div>
 
       {/* Hamburger */}
       <button
@@ -76,13 +97,13 @@ function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full flex flex-col gap-4 px-8 py-6 md:hidden backdrop-blur-md bg-[#1a1a1a]/90 border-b border-[#ffffff]/20">
+        <div className="absolute top-full left-0 w-full flex flex-col gap-4 px-8 py-6 md:hidden backdrop-blur-md bg-[#1a1a1a]/95 border-b border-[#ffffff]/20">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setIsOpen(false)}
-              className={`transition-colors duration-300 ${activeSection === item.id
+              className={`text-lg transition-colors duration-300 ${activeSection === item.id
                 ? "text-white"
                 : "text-[#888888] hover:text-white"
                 }`}
@@ -90,6 +111,26 @@ function Header() {
               {item.label}
             </a>
           ))}
+          {/* Social links */}
+          <div className="flex justify-center gap-6 pt-4 border-t border-white/10">
+            <a
+              href="https://github.com/Souf1an"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#888888] hover:text-white transition-colors duration-300"
+            >
+              <FaGithub size={22} />
+            </a>
+
+            <a
+              href="https://linkedin.com/in/soufiane-ait-ali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#888888] hover:text-white transition-colors duration-300"
+            >
+              <FaLinkedin size={22} />
+            </a>
+          </div>
         </div>
       )}
 
