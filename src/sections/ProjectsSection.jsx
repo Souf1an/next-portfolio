@@ -35,6 +35,30 @@ const projects = [
     tech: ['D3.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: '#',
   },
+  {
+    id: 5,
+    title: 'GraphVis — Data Visualization Dashboard',
+    description:
+      'Interactive charts and network graphs for visualizing large datasets. Includes CSV import, filtering, and export features.',
+    tech: ['D3.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    link: '#',
+  },
+  {
+    id: 6,
+    title: 'GraphVis — Data Visualization Dashboard',
+    description:
+      'Interactive charts and network graphs for visualizing large datasets. Includes CSV import, filtering, and export features.',
+    tech: ['D3.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    link: '#',
+  },
+  {
+    id: 7,
+    title: 'GraphVis — Data Visualization Dashboard',
+    description:
+      'Interactive charts and network graphs for visualizing large datasets. Includes CSV import, filtering, and export features.',
+    tech: ['D3.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    link: '#',
+  }
 ]
 
 export default function ProjectsSection() {
@@ -45,14 +69,14 @@ export default function ProjectsSection() {
         {projects.map((p) => (
           <article
             key={p.id}
-            className="border rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
+            className="border rounded-lg p-4 hover:shadow-md transition-shadow border-[#ffffff]/20 bg-[#1a1a1a]/50"
           >
             <h3 className="text-xl font-medium mb-2">{p.title}</h3>
-            <p className="text-sm text-gray-700 mb-3">{p.description}</p>
+            <p className="text-sm text-gray-300 mb-3">{p.description}</p>
             <p className="text-xs text-gray-500 mb-3">Tech: {p.tech.join(', ')}</p>
             <a
               href={p.link}
-              className="inline-block text-sm text-blue-600 hover:underline"
+              className="inline-block text-sm text-blue-300 hover:underline"
             >
               View project
             </a>

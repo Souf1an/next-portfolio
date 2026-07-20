@@ -13,7 +13,7 @@ function HeroSection() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="text-[#888888] text-sm md:text-lg mb-4 tracking-widest uppercase font-mono">
-      houdy !
+      howdy!
     </motion.p>
 
     <motion.h1

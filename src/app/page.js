@@ -7,23 +7,23 @@ import ContactSection from "@/sections/ContactSection"
 export default function Home() {
   return (
     <main className="pt-20">
-      <section id="hero" className="h-screen">
+      <section id="hero" className="min-h-screen">
         <HeroSection />
       </section>
 
-      <section id="about" className="h-screen">
+      <section id="about" className="min-h-screen">
         <AboutSection />
       </section>
 
-      <section id="skills" className="h-screen">
+      <section id="skills" className="min-h-screen">
         <SkillsSection />
       </section>
 
-      <section id="projects" className="h-screen">
+      <section id="projects" className="min-h-screen">
         <ProjectsSection />
       </section>
 
-      <section id="contact" className="h-screen">
+      <section id="contact" className="min-h-screen">
         <ContactSection />
       </section>
     </main>
