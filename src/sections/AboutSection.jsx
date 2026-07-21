@@ -20,9 +20,9 @@ function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="flex-1">
-          <p className="text-[#ffffff] uppercase tracking-widest text-sm mb-2 font-mono">Know Me More</p>
+          <p className="text-[#ffffff] uppercase tracking-widest mb-2 font-mono">Know Me More</p>
           <h2 className="text-4xl font-bold text-white mb-4">{"I'm Soufiane AITALI, a Web Developer"}</h2>
-          <p className="text-[#888888] mb-8 leading-relaxed font-sans">
+          <p className="text-[#888888] mb-8 leading-relaxed text-lg font-sans">
             {"Self-taught web developer with a passion for building modern, responsive web experiences.Without a traditional degree, I've proven that dedication and hands-on learning speak louder than credentials."}
           </p>
 
